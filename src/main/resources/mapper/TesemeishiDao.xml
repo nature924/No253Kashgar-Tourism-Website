@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TesemeishiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TesemeishiEntity" id="tesemeishiMap">
+        <result property="meishimingcheng" column="meishimingcheng"/>
+        <result property="meishileixing" column="meishileixing"/>
+        <result property="tupian" column="tupian"/>
+        <result property="kouwei" column="kouwei"/>
+        <result property="tese" column="tese"/>
+        <result property="chengshi" column="chengshi"/>
+        <result property="dakadidian" column="dakadidian"/>
+        <result property="renjunxiaofei" column="renjunxiaofei"/>
+        <result property="xiangqing" column="xiangqing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TesemeishiVO" >
+		SELECT * FROM tesemeishi  tesemeishi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TesemeishiVO" >
+		SELECT  tesemeishi.* FROM tesemeishi  tesemeishi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TesemeishiView" >
+
+		SELECT  tesemeishi.* FROM tesemeishi  tesemeishi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TesemeishiView" >
+		SELECT * FROM tesemeishi  tesemeishi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
